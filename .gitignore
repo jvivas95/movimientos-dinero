@@ -1,2 +1,27 @@
+# ⚠️ Archivos sensibles
 .env
-node_modules
+.env.local
+
+# 🐘 PHP dependencies
+/vendor/
+
+# Tailwind/NPM
+/node_modules/
+package-lock.json
+
+# 🗃️ Caches, logs, temporales
+*.log
+*.tmp
+*.cache
+*.bak
+*.swp
+
+# 👁️ Edits y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Tailwind builds
+public/css/*
+!public/css/.gitkeep
