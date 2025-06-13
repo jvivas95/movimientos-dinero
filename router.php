@@ -11,4 +11,7 @@ switch ($route) {
     case 'registro':
         require_once __DIR__ . '/app/views/registro.php';
         break;
+    default:
+        // Redirección por defecto si la página no existe
+        echo("404 - Página no encontrada");
 }
