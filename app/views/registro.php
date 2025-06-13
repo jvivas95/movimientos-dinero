@@ -19,7 +19,21 @@
                 name="nusuario"
                 required
             >
+            <label for="mail">Correo electrónico</label>
+            <input
+                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                type="text"
+                name="mail"
+                required
+            >
             <label for="password">Contraseña</label>
+            <input
+                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                type="password"
+                name="password"
+                required
+            >
+            <label for="password">Repetir contraseña</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="password"
@@ -30,8 +44,12 @@
             <button 
                 class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
                 type="submit"
-                >Iniciar Sesión</button>
-            <a href="index.php?route=registro" class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">Registrarme</a>
+                >Registrarme</button>
+            <a
+                href="index.php?route=login"
+                class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
+                >
+                Ya tienes cuenta?</a>
         </div>
         </form>
     </div>
