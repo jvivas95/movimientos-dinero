@@ -11,7 +11,7 @@
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Registrarme</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="post">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="registro" method="post">
             <label for="nusuario">Nombre de Usuario</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
@@ -33,11 +33,11 @@
                 name="password"
                 required
             >
-            <label for="password">Repetir contraseña</label>
+            <label for="repassword">Repetir contraseña</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="password"
-                name="password"
+                name="repassword"
                 required
             >
         <div class="w-full pt-8 flex justify-between">

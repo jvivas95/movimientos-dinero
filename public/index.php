@@ -12,4 +12,4 @@ $dotenv->load();
 session_start();
 
 // Configuración de rutas
-require_once __DIR__ . '/../router.php';
+require_once __DIR__ . '/../routes/routes.php';
