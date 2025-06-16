@@ -2,10 +2,12 @@
 
 require_once __DIR__ . '/../model/usuario.php';
 
-class AuthController {
+class AuthController
+{
 
     // Función para registrar un nuevo usuario
-    public function registro(){
+    public function registro()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nusuario = $_POST['nusuario'] ?? '';
             $email = $_POST['email'] ?? '';
@@ -19,7 +21,7 @@ class AuthController {
             }
 
             // Crear el usuario
-            Usuario::crearUsuario($nusuario, $email, $password);
+            usuarioModel::crearUsuario($nusuario, $email, $password);
         }
     }
 }

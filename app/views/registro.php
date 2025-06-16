@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Registro</title>
 </head>
+
 <body class="bg-purple-950 flex flex-col items-center justify-center h-screen text-white roboto">
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
@@ -17,41 +19,36 @@
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="text"
                 name="nusuario"
-                required
-            >
+                required>
             <label for="mail">Correo electrónico</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="text"
-                name="mail"
-                required
-            >
+                name="email"
+                required>
             <label for="password">Contraseña</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="password"
                 name="password"
-                required
-            >
+                required>
             <label for="repassword">Repetir contraseña</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="password"
                 name="repassword"
-                required
-            >
-        <div class="w-full pt-8 flex justify-between">
-            <button 
-                class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
-                type="submit"
-                >Registrarme</button>
-            <a
-                href="index.php?route=login"
-                class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
-                >
-                Ya tienes cuenta?</a>
-        </div>
+                required>
+            <div class="w-full pt-8 flex justify-between">
+                <button
+                    class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
+                    type="submit">Registrarme</button>
+                <a
+                    href="index.php?route=login"
+                    class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">
+                    Ya tienes cuenta?</a>
+            </div>
         </form>
     </div>
 </body>
+
 </html>
