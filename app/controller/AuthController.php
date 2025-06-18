@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../model/usuario.php';
+require_once (__DIR__ . '/../model/usuarioModel.php');
 
 class AuthController
 {
@@ -16,12 +16,18 @@ class AuthController
 
             // Validar que las contraseñas coincidan
             if ($password !== $repassword) {
-                echo "Las contraseñas no coinciden.";
+                echo "<script>alert('Las contraseñas no coinciden.'); window.history.back();</script>";
                 return;
             }
 
             // Crear el usuario
-            usuarioModel::crearUsuario($nusuario, $email, $password);
+            $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
+
+            if ($resultado) {
+                echo "<script>alert('Usuario registrado correctamente.'); window.location.href= 'index.php?route=login';</script>";
+            } else {
+                echo "<script>alert('El usuario o correo ya existe.'); window.history.back();</script>";
+            }
         }
     }
 }

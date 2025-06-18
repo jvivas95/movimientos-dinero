@@ -1,3 +1,10 @@
+<?php
+// filepath: /var/www/html/movimientos-dinero/index.php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,7 +20,7 @@
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Registrarme</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="registro" method="post">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="index.php?route=registro" method="POST">
             <label for="nusuario">Nombre de Usuario</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"

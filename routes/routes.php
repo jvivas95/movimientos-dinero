@@ -1,33 +1,36 @@
 <?php
 
-// Ruta que redirige a la página de inicio (LOGIN)
+// Obtener la ruta solicitada, por ejemplo: /login, /dashboard, etc.
 $route = $_GET['route'] ?? 'login';
 
-// Enrutador
-/* switch ($route) {
+// Definir las rutas y los archivos que deben cargarse
+switch ($route) {
+    case 'registro':
+
+        // Comprobar si el método de solicitud es POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+            require_once (__DIR__ . '/../app/controller/AuthController.php');
+            $regUsuario = new AuthController();
+            $regUsuario->registro();
+        }
+
+        // Cargar la vista de registro
+        else {
+            require_once (__DIR__ . '/../app/views/registro.php');
+        }
+        break;
     case 'login':
         require_once __DIR__ . '/../app/views/login.php';
         break;
-    case 'registro':
-        require_once __DIR__ . '/../app/views/registro.php';
+    case 'dashboard':
+        require_once __DIR__ . '/../app/views/dashboard.php';
+        break;
+    case 'movimientos':
+        require_once __DIR__ . '/../app/views/movimientos.php';
         break;
     default:
-        // Redirección por defecto si la página no existe
-        echo ("404 - Página no encontrada");
+        // Página no encontrada
+        require_once __DIR__ . '/../app/views/404.php';
+        break;
 }
- */
 
-$method = $_SERVER['REQUEST_METHOD'];
-
-// Bucle para saber que metodo realizar
-switch ($method) {
-    case 'POST':
-
-        //Bucle para enrutar las funciones
-        switch ($route) {
-            case 'registro':
-                require_once __DIR__ . '/../app/controller/AuthController.php';
-                $registroController = new AuthController();
-                $registroController->registro();
-        }
-}

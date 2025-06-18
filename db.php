@@ -12,6 +12,10 @@ try {
         $_ENV['DB_USER'],
         $_ENV['DB_PASS']
     );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    error_log(("Conexión exitosa a la base de datos: " . $_ENV['DB_NAME']), 0);
+
 } catch (PDOException $e) {
-    echo "Error al conectar a la base de datos: " . $e->getMessage();
+    error_log("Error al conectar a la base de datos: " . $e->getMessage());
+    die("Error al conectar a la base de datos: ");
 }

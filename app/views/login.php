@@ -11,7 +11,7 @@
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Login</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="post">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="POST" action="index.php?route=login">
             <label for="nusuario">Nombre de Usuario</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"

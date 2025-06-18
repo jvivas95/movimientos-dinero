@@ -11,5 +11,5 @@ $dotenv->load();
 // Iniciar sesión
 session_start();
 
-// Configuración de rutas
-require_once __DIR__ . '/../routes/routes.php';
+// Mostrar página de inicio
+include_once (__DIR__ . '/../app/views/dashboard.php');
