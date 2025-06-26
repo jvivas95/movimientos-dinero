@@ -1,6 +1,12 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once (__DIR__ . '/../model/usuarioModel.php');
+
+
 
 class AuthController
 {
@@ -24,10 +30,57 @@ class AuthController
             $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
 
             if ($resultado) {
-                echo "<script>alert('Usuario registrado correctamente.'); window.location.href= 'index.php?route=login';</script>";
+                header("Location: ./../views/login.php");
+                echo "<script>alert('Usuario registrado exitosamente.');</script>";
+                exit();
             } else {
                 echo "<script>alert('El usuario o correo ya existe.'); window.history.back();</script>";
             }
         }
+        else{
+            echo "NO ES UNA PETICIÓN POST";
+        }
+    }
+    
+    public function login()
+    {
+        $nusuario = $_POST['nusuario'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $resultado = usuarioModel::login($nusuario, $password);
+        if ($resultado == true) {
+            // Redirigir al usuario al dashboard
+            return header("Location: ./../views/dashboard.php");
+            
+        } else {
+            echo "<script>alert('Error en el login');</script>";
+        }
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $action = $_POST['action'] ?? '';
+    $controller = new AuthController();
+
+    switch ($action)
+    {
+        case 'login':
+            $controller->login();
+            break;
+        case 'registro':
+            $controller->registro();
+            break;
+        default:
+        echo "Acción no válida";
+    }
+}
+
+/*
+
+    // Verificación de que el AuthController está recibiendo los datos del formulario
+
+$nusuario = $_POST['nusuario'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+echo''.$nusuario.''.$email.''.$password.'';
+*/

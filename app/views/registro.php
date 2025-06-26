@@ -12,15 +12,17 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./../../public/assets/css/style.css">
     <title>Registro</title>
 </head>
 
 <body class="bg-purple-950 flex flex-col items-center justify-center h-screen text-white roboto">
+
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Registrarme</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="index.php?route=registro" method="POST">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="./../controller/AuthController.php" method="POST">
+            <input type="hidden" name="action" value="registro">
             <label for="nusuario">Nombre de Usuario</label>
             <input
                 class="border border-solid rounded-2xl bg-blue-200 pl-4"
@@ -50,7 +52,7 @@ error_reporting(E_ALL);
                     class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
                     type="submit">Registrarme</button>
                 <a
-                    href="index.php?route=login"
+                    href="./login.php"
                     class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">
                     Ya tienes cuenta?</a>
             </div>

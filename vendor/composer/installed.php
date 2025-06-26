@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'jeffe/movimientos-dinero',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'adbf1330a29ed8da5896546dcb11c09ee1383f46',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'jeffe/movimientos-dinero' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'adbf1330a29ed8da5896546dcb11c09ee1383f46',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

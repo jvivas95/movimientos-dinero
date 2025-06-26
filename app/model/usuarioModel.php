@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '../../db.php';
+require_once __DIR__ . '/../../db.php';
 
 class usuarioModel
 {
@@ -21,5 +21,43 @@ class usuarioModel
         $stmt = $pdo->prepare($sql);
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         return $stmt->execute([$nusuario, $email, $passwordHash]);
+    }
+
+    public static function login ($nusuario, $password)
+    {
+        global $pdo;
+        /*
+        // Verificar si el usuario existe
+        $sql = "SELECT * FROM usuario WHERE nusuario = ? or email = ? LIMIT 1";
+        */
+        $sql = "SELECT * FROM usuario WHERE nusuario = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$nusuario]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        //return var_dump($usuario); -> Verificar el contenido del array $usuario
+
+
+        if ($usuario && isset($usuario["PASSWORD"]) && password_verify($password, $usuario["PASSWORD"]))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+
+        //echo var_dump($usuario);
+
+        /*
+        if ($usuario && password_verify($password, $usuario["password"]))
+        {
+            return true;                
+        }
+        else
+        {
+            return false;
+        }
+            */
     }
 }
