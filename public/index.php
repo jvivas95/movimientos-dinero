@@ -1,6 +1,7 @@
 <?php
 // Cargar el autoload de Composer
 require_once __DIR__ . '/../vendor/autoload.php';
+include_once __DIR__ .'/../config.php';
 
 use Dotenv\Dotenv;
 
@@ -12,4 +13,4 @@ $dotenv->load();
 session_start();
 
 // Mostrar página de inicio
-include_once (__DIR__ . '/../app/views/dashboard.php');
+require_once __DIR__ . '/../routes/routes.php';

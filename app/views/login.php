@@ -7,7 +7,7 @@ include_once __DIR__ . '/../../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./../../public/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL;?>/public/assets/css/style.css">
     <title>Login</title>
 </head>
 <body class="bg-purple-950 flex flex-col items-center justify-center h-screen text-white roboto">
@@ -35,7 +35,7 @@ include_once __DIR__ . '/../../config.php';
                 class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
                 type="submit"
                 >Iniciar Sesión</button>
-            <a href="<?php echo APP_URL?>/views/registro.php" class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">Registrarme</a>
+            <a href="?route=registro" class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">Registrarme</a>
         </div>
         </form>
     </div>

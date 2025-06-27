@@ -6,7 +6,7 @@ $route = $_GET['route'] ?? 'login';
 // Definir las rutas y los archivos que deben cargarse
 switch ($route) {
     case 'registro':
-
+        /*
         // Comprobar si el método de solicitud es POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             require_once (__DIR__ . '/../app/controller/AuthController.php');
@@ -18,6 +18,8 @@ switch ($route) {
         else {
             require_once (__DIR__ . '/../app/views/registro.php');
         }
+        */
+        require_once __DIR__ . '/../app/views/registro.php';
         break;
     case 'login':
         require_once __DIR__ . '/../app/views/login.php';
