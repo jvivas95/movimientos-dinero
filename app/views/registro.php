@@ -12,7 +12,7 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASE_URL;?>/public/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/assets/css/style.css">
     <title>Registro</title>
 </head>
 
@@ -21,7 +21,7 @@ error_reporting(E_ALL);
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Registrarme</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="./../controller/AuthController.php" method="POST">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="?route=registro" method="POST">
             <input type="hidden" name="action" value="registro">
             <label for="nusuario">Nombre de Usuario</label>
             <input

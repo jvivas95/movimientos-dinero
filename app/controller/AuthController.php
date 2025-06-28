@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once (__DIR__ . '/../model/usuarioModel.php');
+require_once(__DIR__ . '/../model/usuarioModel.php');
 
 
 
@@ -14,29 +14,29 @@ class AuthController
     // Función para registrar un nuevo usuario
     public function registro()
     {
-            $nusuario = $_POST['nusuario'] ?? '';
-            $email = $_POST['email'] ?? '';
-            $password = $_POST['password'] ?? '';
-            $repassword = $_POST['repassword'] ?? '';
+        $nusuario = $_POST['nusuario'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $repassword = $_POST['repassword'] ?? '';
 
-            // Validar que las contraseñas coincidan
-            if ($password !== $repassword) {
-                echo "<script>alert('Las contraseñas no coinciden.'); window.history.back();</script>";
-                return;
-            }
+        // Validar que las contraseñas coincidan
+        if ($password !== $repassword) {
+            echo "<script>alert('Las contraseñas no coinciden.'); window.history.back();</script>";
+            return;
+        }
 
-            // Crear el usuario
-            $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
+        // Crear el usuario
+        $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
 
-            if ($resultado) {
-                header("Location: ./../views/login.php");
-                echo "<script>alert('Usuario registrado exitosamente.');</script>";
-                exit();
-            } else {
-                echo "<script>alert('El usuario o correo ya existe.'); window.history.back();</script>";
-            }
+        if ($resultado) {
+            header("Location: ?routes=dashboard");
+            echo "<script>alert('Usuario registrado exitosamente.');</script>";
+            exit();
+        } else {
+            echo "<script>alert('El usuario o correo ya existe.'); window.history.back();</script>";
+        }
     }
-    
+
     public function login()
     {
         $nusuario = $_POST['nusuario'] ?? '';
@@ -45,7 +45,6 @@ class AuthController
         if ($resultado == true) {
             // Redirigir al usuario al dashboard
             return header("Location: ./../views/dashboard.php");
-            
         } else {
             echo "<script>alert('Error en el login');</script>";
         }
