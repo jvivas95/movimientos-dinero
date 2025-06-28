@@ -25,6 +25,9 @@ switch ($route) {
 
         // Comprobar si el método es POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once(__DIR__ . '/../app/controller/AuthController.php');
+            $loginUsuario = new AuthController();
+            $loginUsuario->login();
         } else {
             require_once __DIR__ . '/../app/views/login.php';
         }

@@ -29,7 +29,7 @@ class AuthController
         $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
 
         if ($resultado) {
-            header("Location: ?routes=dashboard");
+            header("Location: ?route=dashboard");
             echo "<script>alert('Usuario registrado exitosamente.');</script>";
             exit();
         } else {
@@ -44,7 +44,7 @@ class AuthController
         $resultado = usuarioModel::login($nusuario, $password);
         if ($resultado == true) {
             // Redirigir al usuario al dashboard
-            return header("Location: ./../views/dashboard.php");
+            return header("Location:?route=dashboard");
         } else {
             echo "<script>alert('Error en el login');</script>";
         }
