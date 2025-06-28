@@ -52,7 +52,7 @@ error_reporting(E_ALL);
                     class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
                     type="submit">Registrarme</button>
                 <a
-                    href="./login.php"
+                    href="?route=login"
                     class="bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">
                     Ya tienes cuenta?</a>
             </div>

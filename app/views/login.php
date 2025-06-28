@@ -14,7 +14,7 @@ include_once __DIR__ . '/../../config.php';
     <div class="flex flex-col items-center w-96 h-auto">
         <img>
         <h1 class="text-7xl mb-7">Login</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="POST" action="./../controller/AuthController.php">
+        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="POST" action="?route=login">
             <input type="hidden" name="action" value="login">
             <label for="nusuario">Nombre de Usuario</label>
             <input

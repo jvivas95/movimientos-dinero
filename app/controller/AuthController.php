@@ -14,7 +14,6 @@ class AuthController
     // Función para registrar un nuevo usuario
     public function registro()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nusuario = $_POST['nusuario'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
@@ -36,10 +35,6 @@ class AuthController
             } else {
                 echo "<script>alert('El usuario o correo ya existe.'); window.history.back();</script>";
             }
-        }
-        else{
-            echo "NO ES UNA PETICIÓN POST";
-        }
     }
     
     public function login()
@@ -57,6 +52,7 @@ class AuthController
     }
 }
 
+/*
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
     $controller = new AuthController();
@@ -73,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Acción no válida";
     }
 }
+    */
 
 /*
 
