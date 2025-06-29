@@ -35,8 +35,8 @@ switch ($route) {
     case 'dashboard':
         require_once __DIR__ . '/../app/views/dashboard.php';
         break;
-    case 'movimientos':
-        require_once __DIR__ . '/../app/views/movimientos.php';
+    case 'añadirMovimiento':
+        require_once __DIR__ . '/../app/views/añadirMovimiento.php';
         break;
     default:
         // Página no encontrada

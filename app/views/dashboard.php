@@ -8,7 +8,7 @@ include_once __DIR__ . '/../../config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASE_URL;?>/public/assets/css/style.css">
-    <title>Login</title>
+    <title>Dashboard</title>
 </head>
 <body class="flex roboto">
     <?php include_once (__DIR__ . '/layouts/sidebar.php') ?>
