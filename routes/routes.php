@@ -36,7 +36,15 @@ switch ($route) {
         require_once __DIR__ . '/../app/views/dashboard.php';
         break;
     case 'añadirMovimiento':
-        require_once __DIR__ . '/../app/views/añadirMovimiento.php';
+
+        // Comprobar si el método es POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once(__DIR__ . '/../app/controller/MovimientoController.php');
+            $crearMovimiento = new MovimientoController();
+            $crearMovimiento->crearMovimiento();
+        } else {
+            require_once __DIR__ . '/../app/views/añadirMovimiento.php';
+        }
         break;
     default:
         // Página no encontrada

@@ -17,5 +17,13 @@ class MovimientoController
         $tituloMov = $_POST["tituloMov"] ?? '';
         $importe = $_POST["importe"] ?? '';
         $observaciones = $_POST["observaciones"] ?? '';
+
+        $resultadoCrearMovimiento = movimientoModel::crearMovimiento($tituloMov, $importe, $observaciones);
+
+        if ($resultadoCrearMovimiento) {
+            header("Location: ?route=dashboard");
+        } else {
+            echo "<script>alert('error'); window.history.back();</script>";
+        }
     }
 }
