@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once(__DIR__ . '/../entities/Movimiento.php');
 require_once(__DIR__ . '/../model/movimientoModel.php');
 
 
@@ -18,7 +19,14 @@ class MovimientoController
         $importe = $_POST["importe"] ?? '';
         $observaciones = $_POST["observaciones"] ?? '';
 
-        $resultadoCrearMovimiento = movimientoModel::crearMovimiento($tituloMov, $importe, $observaciones);
+        $datos = new Movimiento(
+            null,
+            $tituloMov,
+            $importe,
+            $observaciones,
+            null,
+            null);
+        $resultadoCrearMovimiento = movimientoModel::crearMovimiento($datos);
 
         if ($resultadoCrearMovimiento) {
             header("Location: ?route=dashboard");
