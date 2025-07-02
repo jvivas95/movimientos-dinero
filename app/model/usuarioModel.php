@@ -39,7 +39,7 @@ class usuarioModel
 
         if ($usuario && isset($usuario["PASSWORD"]) && password_verify($password, $usuario["PASSWORD"]))
         {
-            return true;
+            return $usuario;
         }
         else
         {

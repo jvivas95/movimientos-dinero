@@ -14,6 +14,9 @@ include_once __DIR__ . '/../../config.php';
 
 <body class="flex roboto">
     <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
+    <div>
+        <h1><?php echo $_COOKIE['nusuario']?></h1>
+    </div>
     <div class="flex justify-center items-center h-screen w-full border border-solid">
         <div class="border border-solid w-fit">
             <div class="border border-solid">
