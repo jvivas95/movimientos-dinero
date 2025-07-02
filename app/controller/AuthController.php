@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once(__DIR__ . '/../entities/Usuario.php');
 require_once(__DIR__ . '/../model/usuarioModel.php');
 
 
@@ -14,7 +15,7 @@ class AuthController
     // Función para registrar un nuevo usuario
     public function registro()
     {
-        $nusuario = $_POST['nusuario'] ?? '';
+        $nUsuario = $_POST['nusuario'] ?? '';
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
         $repassword = $_POST['repassword'] ?? '';
@@ -26,9 +27,18 @@ class AuthController
         }
 
         // Crear el usuario
-        $resultado = usuarioModel::crearUsuario($nusuario, $email, $password);
 
-        if ($resultado) {
+        $datos = new Usuario(
+            null,
+            $nUsuario,
+            $email,
+            $password,
+            null
+        );
+
+        $resultadoCrearUsuario = usuarioModel::crearUsuario($datos);
+
+        if ($resultadoCrearUsuario) {
             header("Location: ?route=dashboard");
             echo "<script>alert('Usuario registrado exitosamente.');</script>";
             exit();

@@ -52,10 +52,13 @@ class Movimiento
     }
 
     //SETTERS
+
+    /*
     public function setId($id)
     {
         $this->id = $id;
     }
+    */
 
     public function setTitulo($titulo)
     {
@@ -72,10 +75,12 @@ class Movimiento
         $this->observaciones = $observaciones;
     }
 
+    /*
     public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }
+    */
 
     public function setUsuarioId($usuario_id)
     {

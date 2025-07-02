@@ -4,14 +4,18 @@ require_once __DIR__ . '/../../db.php';
 
 class usuarioModel
 {
-    public static function crearUsuario($nusuario, $email, $password)
+    public static function crearUsuario($datos)
     {
         global $pdo;
 
+        $nUsuario = $datos->getNUsuario();
+        $email = $datos->getEmail();
+        $password = $datos->getPassword();
+ 
         // Verificar si el usuario o email existe
         $sql = "SELECT nusuario, email FROM usuario WHERE nusuario = ? OR email = ? LIMIT 1";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$nusuario, $email]);
+        $stmt->execute([$nUsuario, $email]);
         if ($stmt->fetch()) {
             return false;
         }
@@ -20,7 +24,7 @@ class usuarioModel
         $sql = "INSERT INTO usuario (nusuario, email, password) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($sql);
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        return $stmt->execute([$nusuario, $email, $passwordHash]);
+        return $stmt->execute([$nUsuario, $email, $passwordHash]);
     }
 
     public static function login ($nusuario, $password)
