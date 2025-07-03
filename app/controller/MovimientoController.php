@@ -34,4 +34,23 @@ class MovimientoController
             echo "<script>alert('error'); window.history.back();</script>";
         }
     }
+
+    public function mostrarTodosMovimientos(){
+        
+    }
+
+    public function mostrarMovimientosUsuario()
+    {
+        $usuarioId = $_COOKIE['id'] ?? null;
+        if(!$usuarioId)
+        {
+            header("Location: ?route=login");
+            exit();
+        }
+
+        
+
+    }
+
+
 }
