@@ -27,16 +27,20 @@ class usuarioModel
         return $stmt->execute([$nUsuario, $email, $passwordHash]);
     }
 
-    public static function login ($nusuario, $password)
+    public static function login ($datos)
     {
         global $pdo;
+
+        $nUsuario = $datos->getNUsuario();
+        $password = $datos->getPassword();
+
         /*
         // Verificar si el usuario existe
         $sql = "SELECT * FROM usuario WHERE nusuario = ? or email = ? LIMIT 1";
         */
         $sql = "SELECT * FROM usuario WHERE nusuario = ?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$nusuario]);
+        $stmt->execute([$nUsuario]);
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         //return var_dump($usuario); -> Verificar el contenido del array $usuario
 

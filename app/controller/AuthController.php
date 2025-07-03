@@ -49,13 +49,22 @@ class AuthController
 
     public function login()
     {
-        $nusuario = $_POST['nusuario'] ?? '';
+        $nUsuario = $_POST['nusuario'] ?? '';
         $password = $_POST['password'] ?? '';
-        $resultado = usuarioModel::login($nusuario, $password);
-        if ($resultado) {
+
+        $datos = new Usuario(
+            null,
+            $nUsuario,
+            null,
+            $password,
+            null
+        );
+
+        $resultadoLogin = usuarioModel::login($datos);
+        if ($resultadoLogin) {
 
             // Set de una cookie para la sesión del usuario
-            setcookie('nusuario', $nusuario, time() + 3600); // 1 hora
+            setcookie('nusuario', $nUsuario, time() + 3600); // 1 hora
 
             // Redirigir al usuario al dashboard
             return header("Location:?route=dashboard");
