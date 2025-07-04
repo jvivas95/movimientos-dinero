@@ -64,7 +64,8 @@ class AuthController
         if ($resultadoLogin) {
 
             // Set de una cookie para la sesión del usuario
-            setcookie('nusuario', $nUsuario, time() + 3600); // 1 hora
+            setcookie('nusuario', $resultadoLogin['nusuario'], time() + 3600); // 1 hora
+            setcookie('id', $resultadoLogin['id'], time() + 3600);
 
             // Redirigir al usuario al dashboard
             return header("Location:?route=dashboard");
