@@ -37,7 +37,11 @@ class MovimientoController
         }
     }
 
-    public function mostrarTodosMovimientos() {}
+    public function mostrarTodosMovimientos()
+    {
+        $resultadoTodosMovimientos = movimientoModel::obtenerTodosMovimientos();
+        return $resultadoTodosMovimientos;
+    }
 
     public function mostrarMovimientosUsuario()
     {

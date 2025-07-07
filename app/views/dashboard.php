@@ -25,18 +25,14 @@ include_once __DIR__ . '/../../config.php';
                 <div><?php echo $_COOKIE['id'] ?></div>
             </div>
         </div>
-        <div class="flex justify-center items-center h-v w-full border border-solid">
-            <div class="border border-solid w-fit">
+        <div class="flex flex-col justify-center items-center h-v w-full border border-solid">
+            <?php foreach ($movimientos as $movimiento): ?>
                 <div class="border border-solid">
-                    <h1>DASHBOARD</h1>
+                    <div><?= $movimiento['titulo'] ?></div>
+                    <div><?= $movimiento['importe'] ?></div>
+                    <div><?= $movimiento['observaciones'] ?></div>
                 </div>
-                <div class="border border-solid">
-                    Titulo
-                </div>
-                <div class="border border-solid">
-                    Importe
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>

@@ -10,7 +10,7 @@ switch ($route) {
     case 'registro':
 
         // Comprobar si el usuario está autenticado
-        if (isAuthenticated()){
+        if (isAuthenticated()) {
 
             // Si el usuario ya se ha autenticado, se le redirige al dashboard
             header(("Location:?route=dashboard"));
@@ -34,12 +34,11 @@ switch ($route) {
     case 'login':
 
         // Comprobar si el usuario está autenticado
-        if (isAuthenticated()){
+        if (isAuthenticated()) {
 
             // Si el usuario ya se ha autenticado, se le redirige al dashboard
             header("Location:?route=dashboard");
             exit();
-
         }
 
         // Comprobar si el método es POST
@@ -54,17 +53,22 @@ switch ($route) {
     case 'dashboard':
 
         // Comprobar si el usuario está autenticado
-        if(!isAuthenticated()){
+        if (!isAuthenticated()) {
             // Si no lo está redirige al usuario al login
             header("Location:?route=login");
             exit();
         }
+
+        require_once __DIR__ . '/../app/controller/MovimientoController.php';
+        $todosMovimientos = new MovimientoController();
+        $movimientos = $todosMovimientos->mostrarTodosMovimientos();
+
         require_once __DIR__ . '/../app/views/dashboard.php';
         break;
     case 'añadirMovimiento':
 
         // Comprobar si el usuario está autenticado
-        if(!isAuthenticated()){
+        if (!isAuthenticated()) {
 
             // Si no está autenticado, se le redirige al login
             header("Location:?route=login");
