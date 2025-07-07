@@ -12,10 +12,11 @@ class movimientoModel
         $tituloMov = $datos->getTitulo();
         $importe = $datos->getImporte();
         $observaciones = $datos->getObservaciones();
+        $usuarioId = $datos->getUsuarioId();
 
-        $sql = "INSERT INTO movimiento (titulo, importe, observaciones) VALUES (?,?,?)";
+        $sql = "INSERT INTO movimiento (titulo, importe, observaciones, usuario_id) VALUES (?,?,?,?)";
         $stmt = $pdo->prepare($sql);
-        return $stmt->execute([$tituloMov, $importe, $observaciones]);
+        return $stmt->execute([$tituloMov, $importe, $observaciones, $usuarioId]);
     }
 
     public static function obtenerTodosMovimientos()
@@ -38,7 +39,5 @@ class movimientoModel
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$usuarioId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     }
-
 }

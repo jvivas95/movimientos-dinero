@@ -18,6 +18,7 @@ class MovimientoController
         $tituloMov = $_POST["tituloMov"] ?? '';
         $importe = $_POST["importe"] ?? '';
         $observaciones = $_POST["observaciones"] ?? '';
+        $usuarioId = $_COOKIE['id'] ?? null;
 
         $datos = new Movimiento(
             null,
@@ -25,7 +26,8 @@ class MovimientoController
             $importe,
             $observaciones,
             null,
-            null);
+            $usuarioId
+        );
         $resultadoCrearMovimiento = movimientoModel::crearMovimiento($datos);
 
         if ($resultadoCrearMovimiento) {
@@ -35,22 +37,14 @@ class MovimientoController
         }
     }
 
-    public function mostrarTodosMovimientos(){
-        
-    }
+    public function mostrarTodosMovimientos() {}
 
     public function mostrarMovimientosUsuario()
     {
         $usuarioId = $_COOKIE['id'] ?? null;
-        if(!$usuarioId)
-        {
+        if (!$usuarioId) {
             header("Location: ?route=login");
             exit();
         }
-
-        
-
     }
-
-
 }
