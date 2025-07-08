@@ -17,16 +17,45 @@ include_once __DIR__ . '/../../config.php';
     <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
     <!-- CAJA DEL BODY -->
     <div class="flex flex-col w-full h-screen">
+        <!-- HEADER -->
         <?php include_once(__DIR__ . '/layouts/header.php') ?>
-        <div class="flex w-full justify-center items-center h-full">
-            <div class="flex flex-col justify-center items-center w-full border border-solid">
+        <!-- CAJA LISTA DE MOVIMIENTOS -->
+        <div class="flex flex-col w-full items-center h-full">
+            <!-- TITULO LISTA DE MOVIMIENTOS -->
+            <div class="text-4xl pt-5 mb-5">Lista de movimientos</div>
+            <!-- CAJA LISTA DE MOVIMIENTOS -->
+            <div class="flex flex-col justify-center items-center w-full pl-5 pr-5">
+                <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
                 <?php foreach ($movimientos as $movimiento): ?>
-                    <div class="border border-solid">
-                        <div><?= $movimiento['titulo'] ?></div>
-                        <div><?= $movimiento['importe'] ?>€</div>
-                        <div><?= $movimiento['observaciones'] ?></div>
+                    <!-- CAJA MOVIMIENTO -->
+                    <div class="flex flex-col border border-solid w-full rounded-2xl p-2 justify-between mb-1">
+                        <div id="fechas"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
+                        <div class="flex justify-between">
+                            <div class="font-bold">
+                            <div id="titulo"> <?= $movimiento['titulo'] ?></div>
+                            </div>
+                            <div class="">
+                            <div id="importe" class="<?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
+                                <?= $movimiento['importe'] ?>€</div>
+                            </div>
+                        </div>
                     </div>
                 <?php endforeach; ?>
+                <!-- CAJA DEL TOTAL DE MOVIMIENTOS -->
+                <div class="flex border border-solid rounded-2xl mt-5 w-full p-1.5">
+                    <?php
+                        $total = 0;
+                        foreach ($movimientos as $movimiento) {
+                            $total += $movimiento['importe'];
+                        }
+                    ?>
+                    <div class="flex justify-between items-center w-full px-2">
+                        <span class="font-semibold">TOTAL:</span>
+                        <div id="importe" class="<?= $total >= 0 ? 'text-green-500' : 'text-red-600' ?>">
+                            <?= number_format($total, 2) ?>€
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
