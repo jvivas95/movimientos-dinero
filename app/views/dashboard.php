@@ -29,7 +29,7 @@ include_once __DIR__ . '/../../config.php';
             <?php foreach ($movimientos as $movimiento): ?>
                 <div class="border border-solid">
                     <div><?= $movimiento['titulo'] ?></div>
-                    <div><?= $movimiento['importe'] ?></div>
+                    <div><?= $movimiento['importe'] ?>€</div>
                     <div><?= $movimiento['observaciones'] ?></div>
                 </div>
             <?php endforeach; ?>
