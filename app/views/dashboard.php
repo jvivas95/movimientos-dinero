@@ -13,8 +13,10 @@ include_once __DIR__ . '/../../config.php';
 </head>
 
 <body class="flex roboto">
+    <!-- SIDEBAR -->
     <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
-    <div class="flex flex-col w-full">
+    <!-- CAJA DEL BODY -->
+    <div class="flex flex-col w-full h-screen">
         <?php include_once(__DIR__ . '/layouts/header.php') ?>
         <div class="flex w-full justify-center items-center h-full">
             <div class="flex flex-col justify-center items-center w-full border border-solid">
