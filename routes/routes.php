@@ -50,6 +50,12 @@ switch ($route) {
             require_once __DIR__ . '/../app/views/login.php';
         }
         break;
+    case 'logout':
+
+        require_once __DIR__ . '/../app/controller/AuthController.php';
+        $logoutUsuario = new AuthController();
+        $logoutUsuario->logout();
+        break;
     case 'dashboard':
 
         // Comprobar si el usuario está autenticado

@@ -68,4 +68,13 @@ class usuarioModel
         }
             */
     }
+
+    public static function logout()
+    {
+        session_destroy();
+        setcookie('nusuario', '', time() - 3600); // Eliminar cookie
+        setcookie('id', '', time() - 3600); // Eliminar cookie
+        return true;
+
+    }
 }
