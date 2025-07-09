@@ -1,8 +1,8 @@
-<nav class="flex flex-col bg-purple-900 text-white w-fit h-screen p-5">
+<nav class="flex flex-col text-white w-fit h-screen p-5">
     <div class="border border-solid mb-20">
         <div>LOGO</div>
     </div>
-    <ul class="flex-col w-fit items-center border border-solid">
+    <ul class="flex-col w-fit items-center">
         <li class="flex" href="?route=añadirMovimiento">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-library-plus">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
