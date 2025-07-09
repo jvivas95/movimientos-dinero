@@ -3,6 +3,8 @@
         <h1>Hola, <?php echo $_COOKIE['nusuario'] ?></h1>
     </div>
     <div class="border border-solid rounded-md bg-purple-400 p-1 w-fit ">
-        <button>Cerrar sesión</button>
+        <a href="?route=añadirMovimiento">
+            Cerrar sesión
+        </a>
     </div>
 </div>

@@ -12,7 +12,7 @@ include_once __DIR__ . '/../../config.php';
     <title>Dashboard</title>
 </head>
 
-<body class="flex roboto">
+<body class="flex roboto bg-purple-900">
     <!-- SIDEBAR -->
     <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
     <!-- CAJA DEL BODY -->
@@ -20,7 +20,7 @@ include_once __DIR__ . '/../../config.php';
         <!-- HEADER -->
         <?php include_once(__DIR__ . '/layouts/header.php') ?>
         <!-- CAJA LISTA DE MOVIMIENTOS -->
-        <div class="flex flex-col w-full items-center h-full">
+        <div class="flex flex-col w-full items-center h-full bg-white rounded-tl-2xl">
             <!-- TITULO LISTA DE MOVIMIENTOS -->
             <div class="text-4xl pt-5 mb-5">Lista de movimientos</div>
             <!-- CAJA LISTA DE MOVIMIENTOS -->
@@ -32,11 +32,11 @@ include_once __DIR__ . '/../../config.php';
                         <div id="fechas"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
                         <div class="flex justify-between">
                             <div class="font-bold">
-                            <div id="titulo"> <?= $movimiento['titulo'] ?></div>
+                                <div id="titulo"> <?= $movimiento['titulo'] ?></div>
                             </div>
                             <div class="">
-                            <div id="importe" class="<?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
-                                <?= $movimiento['importe'] ?>€</div>
+                                <div id="importe" class="<?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
+                                    <?= $movimiento['importe'] ?>€</div>
                             </div>
                         </div>
                     </div>
@@ -44,10 +44,10 @@ include_once __DIR__ . '/../../config.php';
                 <!-- CAJA DEL TOTAL DE MOVIMIENTOS -->
                 <div class="flex border border-solid rounded-2xl mt-5 w-full p-1.5">
                     <?php
-                        $total = 0;
-                        foreach ($movimientos as $movimiento) {
-                            $total += $movimiento['importe'];
-                        }
+                    $total = 0;
+                    foreach ($movimientos as $movimiento) {
+                        $total += $movimiento['importe'];
+                    }
                     ?>
                     <div class="flex justify-between items-center w-full px-2">
                         <span class="font-semibold">TOTAL:</span>
