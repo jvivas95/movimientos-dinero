@@ -12,23 +12,23 @@ include_once __DIR__ . '/../../config.php';
     <title>Dashboard</title>
 </head>
 
-<body class="flex roboto bg-purple-900">
+<body class="flex roboto bg-purple-900 h-screen">
     <!-- SIDEBAR -->
     <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
     <!-- CAJA DEL BODY -->
-    <div class="flex flex-col w-full h-screen">
+    <div class="flex flex-col w-full h-full">
         <!-- HEADER -->
         <?php include_once(__DIR__ . '/layouts/header.php') ?>
         <!-- CAJA LISTA DE MOVIMIENTOS -->
-        <div class="flex flex-col w-full items-center h-full bg-white rounded-tl-2xl">
+        <div class="flex flex-col items-center flex-1 bg-white rounded-2xl m-6 overflow-hidden">
             <!-- TITULO LISTA DE MOVIMIENTOS -->
             <div class="text-4xl pt-5 mb-5">Lista de movimientos</div>
             <!-- CAJA LISTA DE MOVIMIENTOS -->
-            <div class="flex flex-col justify-center items-center w-full pl-5 pr-5">
+            <div class="flex flex-col justify-start items-center w-full h-full pl-5 pr-5 pb-5 overflow-y-auto">
                 <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
                 <?php foreach ($movimientos as $movimiento): ?>
                     <!-- CAJA MOVIMIENTO -->
-                    <div class="flex flex-col border border-solid w-full rounded-2xl p-2 justify-between mb-1">
+                    <div class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto">
                         <div id="fechas"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
                         <div class="flex justify-between">
                             <div class="font-bold">
