@@ -25,25 +25,25 @@ error_reporting(E_ALL);
             <input type="hidden" name="action" value="registro">
             <label for="nusuario">Nombre de Usuario</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
                 type="text"
                 name="nusuario"
                 required>
             <label for="mail">Correo electrónico</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
                 type="text"
                 name="email"
                 required>
             <label for="password">Contraseña</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
                 type="password"
                 name="password"
                 required>
             <label for="repassword">Repetir contraseña</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
                 type="password"
                 name="repassword"
                 required>
