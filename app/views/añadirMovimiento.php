@@ -10,25 +10,23 @@ include_once __DIR__ . '/../../config.php';
     <link rel="stylesheet" href="<?php echo BASE_URL;?>/public/assets/css/style.css">
     <title>Añadir movimiento</title>
 </head>
-<body class="flex flex-col items-center justify-center h-screen bg-purple-900 text-white">
+<body class="flex flex-col items-center justify-center h-screen">
     <!--< ?php include_once (__DIR__ . '/layouts/sidebar.php') ?>-->
-    <h1 class="text-center  text-5xl pb-8">AÑADIR MOVIMIENTO</h1>
-    <main class="">
+    <main class="border border-solid">
         <div class="w-auto">
+        <h1 class="border border-solid text-center">AÑADIR MOVIMIENTO</h1>
         <div>
-            <form class="flex flex-col text-center justify-center items-center space-y-2" action="?route=añadirMovimiento" method="POST">
-                <label class="text-2xl">Título movimiento</label>
-                <input class="text-black border border-solid border-black rounded-2xl w-fit pl-2 bg-white" type="text" name="tituloMov" required>
-                <label class="text-2xl">Importe</label>
-                <input class="text-black border border-solid border-black rounded-2xl pl-2 bg-white" type="number" name="importe" required>
-                <label class="text-2xl">Observaciones</label>
-                <textarea class="text-black border border-solid border-black rounded-2xl p-2.5 bg-white" name="observaciones" rows="4" cols="50"></textarea>
-                <div class="flex justify-between w-full">
-                    <button class="p-2 cursor-pointer border border-solid bg-blue-400 rounded-2xl hover:bg-sky-800 duration-300" type="submit">AÑADIR</button>
-                    <a class="border border-solid h-fit p-2 rounded-2xl bg-blue-400 hover:bg-sky-800 duration-300" type="button" href="?route=dashboard">HOME</a>
-                </div>
+            <form class="flex flex-col" action="?route=añadirMovimiento" method="POST">
+                <label>Título movimiento</label>
+                <input class="border border-solid" type="text" name="tituloMov" required>
+                <label>Importe</label>
+                <input class="border border-solid" type="number" name="importe" required>
+                <label>Observaciones</label>
+                <textarea class="border border-solid" name="observaciones" rows="4" cols="50"></textarea>
+                <button class="border border-solid" type="submit">Añadir</button>
             </form>
         </div>
+        <a type="button" href="?route=dashboard">HOME</a>
     </main>
 </body>
 </html>

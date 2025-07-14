@@ -18,14 +18,14 @@ include_once __DIR__ . '/../../config.php';
             <input type="hidden" name="action" value="login">
             <label for="nusuario">Nombre de Usuario</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="text"
                 name="nusuario"
                 required
             >
             <label for="password">Contraseña</label>
             <input
-                class="border border-solid rounded-2xl bg-blue-200 pl-4 text-black"
+                class="border border-solid rounded-2xl bg-blue-200 pl-4"
                 type="password"
                 name="password"
                 required
