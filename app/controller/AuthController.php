@@ -73,26 +73,16 @@ class AuthController
             echo "<script>alert('Error en el login');</script>";
         }
     }
-}
 
-/*
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $action = $_POST['action'] ?? '';
-    $controller = new AuthController();
-
-    switch ($action)
+    public function logout()
     {
-        case 'login':
-            $controller->login();
-            break;
-        case 'registro':
-            $controller->registro();
-            break;
-        default:
-        echo "Acción no válida";
+        $resultadoLogout = usuarioModel::logout();
+        if ($resultadoLogout==true) {
+            return header("Location:?route=login");
+        }
+
     }
 }
-    */
 
 /*
 
