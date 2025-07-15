@@ -1,4 +1,4 @@
-<nav class="flex flex-col text-white w-fit h-screen p-5">
+<nav class="flex flex-col w-fit h-screen p-5">
     <div class="border border-solid mb-20">
         <div>LOGO</div>
     </div>

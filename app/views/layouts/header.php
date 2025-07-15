@@ -1,4 +1,4 @@
-<div class=" text-white flex justify-between h-auto p-3">
+<div class="flex justify-between h-auto p-3">
     <div class="w-fit p-1">
         <h1>Hola, <?php echo $_COOKIE['nusuario'] ?></h1>
     </div>
