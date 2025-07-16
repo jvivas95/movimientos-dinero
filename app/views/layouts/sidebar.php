@@ -1,5 +1,5 @@
 <nav class="flex flex-col w-fit h-screen p-5">
-    <div class="mb-20">
+    <div class="mt-2.5 mb-16">
         <picture>
             <source srcset="<?php echo BASE_URL; ?>/public/assets/images/logo.webp" type="image/webp">
             <img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Logo" class="rounded-2xl w-3xs">

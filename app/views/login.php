@@ -10,19 +10,20 @@ include_once __DIR__ . '/../../config.php';
     <link rel="stylesheet" href="<?php echo BASE_URL;?>/public/assets/css/style.css">
     <title>Login</title>
 </head>
-<body class="bg-gray-50 flex flex-col items-center justify-center h-screen text-slate-800 roboto">
-    <div class="flex flex-col items-center w-96 h-auto">
-        <img>
-        <h1 class="text-7xl mb-7">Login</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" method="POST" action="?route=login">
+<body class="bg-gray-50 flex flex-col items-center justify-center min-h-screen text-slate-800 roboto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center w-full max-w-md mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 lg:mb-7 text-center font-medium">Login</h1>
+        <form class="flex flex-col items-center text-base sm:text-lg space-y-3 sm:space-y-4 w-full" method="POST" action="?route=login">
             <input type="hidden" name="action" value="login">
-            <label for="nusuario">Nombre de Usuario</label>
+            <div>
+            <label for="nusuario" class="text-center block text-sm sm:text-base font-medium mb-2">Nombre de Usuario</label>
             <input
-                class="border border-solid rounded-2xl bg-gray-200 pl-4"
+                class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 py-3 sm:py-3.5 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 type="text"
                 name="nusuario"
                 required
             >
+            </div>
             <label for="password">Contraseña</label>
             <input
                 class="border border-solid rounded-2xl bg-gray-200 pl-4"
