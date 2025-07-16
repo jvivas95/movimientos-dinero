@@ -20,7 +20,7 @@ include_once __DIR__ . '/../../config.php';
         <!-- HEADER -->
         <?php include_once(__DIR__ . '/layouts/header.php') ?>
         <!-- CAJA LISTA DE MOVIMIENTOS -->
-        <div class="flex flex-col items-center flex-1 bg-gray-400 rounded-2xl m-6 overflow-hidden">
+        <div class="flex flex-col items-center flex-1 rounded-2xl m-6 overflow-hidden">
             <!-- TITULO LISTA DE MOVIMIENTOS -->
             <div class="text-4xl pt-5 mb-5">Lista de movimientos</div>
             <!-- CAJA LISTA DE MOVIMIENTOS -->

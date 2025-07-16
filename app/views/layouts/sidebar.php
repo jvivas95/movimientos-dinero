@@ -1,6 +1,9 @@
 <nav class="flex flex-col w-fit h-screen p-5">
-    <div class="border border-solid mb-20">
-        <div>LOGO</div>
+    <div class="mb-20">
+        <picture>
+            <source srcset="<?php echo BASE_URL; ?>/public/assets/images/logo.webp" type="image/webp">
+            <img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Logo" class="rounded-2xl w-3xs">
+        </picture>
     </div>
     <ul class="flex-col w-fit items-center">
         <li class="flex" href="?route=añadirMovimiento">
