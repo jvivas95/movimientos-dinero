@@ -16,44 +16,59 @@ error_reporting(E_ALL);
     <title>Registro</title>
 </head>
 
-<body class="bg-gray-250 flex flex-col items-center justify-center h-screen text-slate-800 roboto">
+<body class="bg-gray-50 flex flex-col items-center justify-center min-h-screen text-slate-800 roboto px-4 sm:px-6 lg:px-8">
 
-    <div class="flex flex-col items-center w-96 h-auto">
-        <img>
-        <h1 class="text-7xl mb-7">Registrarme</h1>
-        <form class="flex flex-col items-center text-lg space-y-2 w-full" action="?route=registro" method="POST">
+    <div class="flex flex-col items-center w-full max-w-md mx-auto">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 lg:mb-7 text-center font-medium">Registrarme</h1>
+        <form class="flex flex-col items-center text-base sm:text-lg space-y-3 sm:space-y-4 w-full" action="?route=registro" method="POST">
             <input type="hidden" name="action" value="registro">
-            <label for="nusuario">Nombre de Usuario</label>
-            <input
-                class="border border-solid rounded-2xl bg-gray-200 pl-4"
-                type="text"
-                name="nusuario"
-                required>
-            <label for="mail">Correo electrónico</label>
-            <input
-                class="border border-solid rounded-2xl bg-gray-200 pl-4"
-                type="text"
-                name="email"
-                required>
-            <label for="password">Contraseña</label>
-            <input
-                class="border border-solid rounded-2xl bg-gray-200 pl-4"
-                type="password"
-                name="password"
-                required>
-            <label for="repassword">Repetir contraseña</label>
-            <input
-                class="border border-solid rounded-2xl bg-gray-200 pl-4"
-                type="password"
-                name="repassword"
-                required>
-            <div class="w-full pt-8 flex justify-between">
+            <div>
+                <label
+                    for="nusuario"
+                    class="text-center block text-sm sm:text-base font-medium mb-2">Nombre de Usuario</label>
+                <input
+                    class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    type="text"
+                    name="nusuario"
+                    required>
+            </div>
+            <div>
+                <label
+                    for="mail"
+                    class="text-center block text-sm sm:text-base font-medium mb-2">Correo electrónico</label>
+                <input
+                    class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    type="text"
+                    name="email"
+                    required>
+            </div>
+            <div>
+                <label
+                    for="password"
+                    class="text-center block text-sm sm:text-base font-medium mb-2">Contraseña</label>
+                <input
+                    class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    type="password"
+                    name="password"
+                    required>
+            </div>
+            <div>
+                <label
+                    for="repassword"
+                    class="text-center block text-sm sm:text-base font-medium mb-2">Repetir contraseña</label>
+                <input
+                    class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    type="password"
+                    name="repassword"
+                    required>
+            </div>
+            <div class="w-full pt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-between">
                 <button
-                    class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl"
+                    class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white text-center font-bold py-2 px-4 rounded-2xl w-full sm:w-auto"
                     type="submit">Registrarme</button>
                 <a
                     href="?route=login"
-                    class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white font-bold py-2 px-4 rounded-2xl">
+                    class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white text-center font-bold py-2 px-4 rounded-2xl w-full sm:w-auto">
                     Ya tienes cuenta?</a>
             </div>
         </form>

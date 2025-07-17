@@ -14,7 +14,9 @@ include_once __DIR__ . '/../../config.php';
 
 <body class="flex roboto bg-gray-50 text-slate-800 h-screen">
     <!-- SIDEBAR -->
-    <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
+    <div class="hidden md:block">
+        <?php include_once(__DIR__ . '/layouts/sidebar.php') ?>
+    </div>
     <!-- CAJA DEL BODY -->
     <div class="flex flex-col w-full h-full">
         <!-- HEADER -->
