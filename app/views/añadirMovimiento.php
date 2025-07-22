@@ -36,8 +36,8 @@ include_once __DIR__ . '/../../config.php';
                     <label class="text-center block text-sm sm:text-base font-medium mb-2">Observaciones</label>
                     <textarea class="w-full border border-solid rounded-xl sm:rounded-2xl bg-gray-200 pl-4 pr-4 text-base focus:outline-none focus:ring-blue-500 focus:border-transparent transition-all duration-200" name="observaciones" rows="4" cols="50"></textarea>
                     <div class="flex justify-between w-full pl-10 pr-10">
-                        <button class="hidden md:block text-white p-2 cursor-pointer border border-solid bg-emerald-500 rounded-2xl hover:bg-emerald-700 duration-300" type="submit">AÑADIR</button>
-                        <a class="hidden md:block text-white border border-solid h-fit p-2 rounded-2xl bg-blue-600 hover:bg-blue-700 duration-300" type="button" href="?route=dashboard">HOME</a>
+                        <button class="md:block text-white p-2 cursor-pointer border border-solid bg-emerald-500 rounded-2xl hover:bg-emerald-700 duration-300" type="submit">AÑADIR</button>
+                        <a class="md:block text-white border border-solid h-fit p-2 rounded-2xl bg-blue-600 hover:bg-blue-700 duration-300" type="button" href="?route=dashboard">HOME</a>
                     </div>
                 </form>
             </div>
