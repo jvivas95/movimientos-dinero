@@ -34,7 +34,7 @@ include_once __DIR__ . '/../../config.php';
                     <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
                     <?php foreach ($movimientos as $movimiento): ?>
                         <!-- CAJA MOVIMIENTO -->
-                        <div class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto">
+                        <div onclick="abrirModal();" class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto">
                             <div id="fechas"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
                             <div class="flex justify-between">
                                 <div class="font-bold">
@@ -71,6 +71,10 @@ include_once __DIR__ . '/../../config.php';
             </div>
         </div>
     </div>
+
+    <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
+    <script src="<?php echo BASE_URL; ?>/public/assets/js/modal.js"></script>
+
 </body>
 
 </html>
