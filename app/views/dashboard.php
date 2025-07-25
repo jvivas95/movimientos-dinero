@@ -32,18 +32,20 @@ include_once __DIR__ . '/../../config.php';
                 <!-- CAJA LISTA DE MOVIMIENTOS -->
                 <div class="flex flex-col justify-start items-center w-full h-full pl-5 pr-5 pb-5 overflow-y-auto">
                     <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
-                    <?php foreach ($movimientos as $movimiento): ?>
+                    <?php foreach ($movimientos as $index => $movimiento): ?>
                         <!-- CAJA MOVIMIENTO -->
-                        <div onclick="abrirModal();" class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto">
-                            <div id="fechas"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
+                        <div onclick="abrirModalMovimiento(<?= $movimiento['id'] ?>, '<?= addslashes($movimiento['titulo']) ?>', <?= $movimiento['importe'] ?>, '<?= date('d/m/Y', strtotime($movimiento['created_at'])) ?>, <?= $movimiento['observaciones'] ?>')"
+                            class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto cursor-pointer hover:bg-gray-50">
+                            <div class="fechas-<?= $index ?>"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
                             <div class="flex justify-between">
                                 <div class="font-bold">
-                                    <div id="titulo"> <?= $movimiento['titulo'] ?></div>
+                                    <div class="titulo-<?= $index ?>"> <?= $movimiento['titulo'] ?></div>
                                 </div>
                                 <div class="">
-                                    <div id="importe" class="<?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
+                                    <div class="importe-<?= $index ?> <?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
                                         <?= $movimiento['importe'] ?>€</div>
                                 </div>
+
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -73,7 +75,9 @@ include_once __DIR__ . '/../../config.php';
     </div>
 
     <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
+    <?php include_once __DIR__ . '/layouts/modalMovimiento.php' ?>
     <script src="<?php echo BASE_URL; ?>/public/assets/js/modalAñadirMovimiento.js"></script>
+    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalMovimiento.js"></script>
 
 </body>
 

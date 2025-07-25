@@ -3,7 +3,7 @@
  */
 
 // Funcion para abrir el modal
-function abrirModal() {
+function abrirModalAñadirMovimiento() {
   const modal = document.getElementById("movimientoModal");
   if (modal) {
     modal.classList.remove("hidden");
@@ -18,7 +18,7 @@ function abrirModal() {
 }
 
 // Funcion para cerrar el modal
-function cerrarModal() {
+function cerrarModalAñadirMovimiento() {
   const modal = document.getElementById("movimientoModal");
   if (modal) {
     modal.classList.add("hidden");
@@ -40,7 +40,7 @@ function eventosModal() {
     // Cerrar modal al hacer clic fuera de él
     modal.addEventListener("click", function (e) {
       if (e.target === this) {
-        cerrarModal();
+        cerrarModalAñadirMovimiento();
       }
     });
   }
