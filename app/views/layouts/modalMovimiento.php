@@ -11,22 +11,39 @@
                 </svg>
             </button>
         </div>
-        <div class="flex flex-col border border-solid w-full rounded-2xl p-4 pb-5 justify-between mb-1">
-            <div id="fechas" class="text-gray-600 mb-2"></div>
-            <div id="movimiento-id" class="hidden text-xs text-gray-400 mb-2">ID: </div>
-            <div class="flex justify-between">
-                <div class="font-bold">
-                    <div id="titulo"></div>
-                </div>
-                <div class="">
-                    <div id="importe" class="font-semibold"></div>
+
+        <!-- Contenido del modal -->
+        <div class="p-4">
+            <div class="border border-gray-200 rounded-lg p-4 space-y-3">
+                <!-- Fecha -->
+                <div id="fechas" class="text-sm text-gray-600"></div>
+
+                <!-- ID del movimiento (oculto por defecto) -->
+                <div id="movimiento-id" class="hidden text-xs text-gray-400"></div>
+
+                <!-- Título e Importe -->
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <div id="titulo" class="font-bold text-lg"></div>
+                    </div>
+                    <div class="ml-4">
+                        <div id="importe" class="font-semibold text-lg"></div>
+                    </div>
                 </div>
 
+                <!-- Observaciones -->
+                <div class="border-t pt-3">
+                    <h4 class="font-medium text-gray-700 mb-2">Observaciones:</h4>
+                    <div id="observaciones" class="text-gray-600"></div>
+                </div>
             </div>
         </div>
-        <div class="border-t pt-3">
-            <h4>observaciones:</h4>
-            <div id="observaciones"></div>
+
+        <!-- Footer del modal (opcional) -->
+        <div class="flex justify-end p-4 border-t">
+            <button onclick="cerrarModal()" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
+                Cerrar
+            </button>
         </div>
     </div>
 </div>

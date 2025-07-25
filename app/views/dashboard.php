@@ -34,7 +34,7 @@ include_once __DIR__ . '/../../config.php';
                     <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
                     <?php foreach ($movimientos as $index => $movimiento): ?>
                         <!-- CAJA MOVIMIENTO -->
-                        <div onclick="abrirModalMovimiento(<?= $movimiento['id'] ?>, '<?= addslashes($movimiento['titulo']) ?>', <?= $movimiento['importe'] ?>, '<?= date('d/m/Y', strtotime($movimiento['created_at'])) ?>, <?= $movimiento['observaciones'] ?>')"
+                        <div onclick="abrirModalMovimiento(<?= $movimiento['id'] ?>, '<?= addslashes($movimiento['titulo']) ?>', <?= $movimiento['importe'] ?>, '<?= date('d/m/Y', strtotime($movimiento['created_at'])) ?>', '<?= $movimiento['observaciones'] ?>')"
                             class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto cursor-pointer hover:bg-gray-50">
                             <div class="fechas-<?= $index ?>"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
                             <div class="flex justify-between">
