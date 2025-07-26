@@ -5,7 +5,7 @@
         <!-- Header del modal -->
         <div class="flex justify-between items-center p-4 border-b">
             <h3 class="text-lg font-semibold">Añadir Movimiento</h3>
-            <button onclick="cerrarModal()" class="text-gray-400 hover:text-gray-600">
+            <button onclick="cerrarModalAñadirMovimiento()" class="text-gray-400 hover:text-gray-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="flex justify-end space-x-2">
-                    <button type="button" onclick="cerrarModal()" class="px-4 py-2 text-gray-600 bg-gray-200 rounded-md hover:bg-gray-300">Cancelar</button>
+                    <button type="button" onclick="cerrarModalAñadirMovimiento()" class="px-4 py-2 text-gray-600 bg-gray-200 rounded-md hover:bg-gray-300">Cancelar</button>
                     <button type="submit" class="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-700">Añadir</button>
                 </div>
             </form>

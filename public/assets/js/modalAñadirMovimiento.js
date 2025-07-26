@@ -33,13 +33,13 @@ function cerrarModalAñadirMovimiento() {
 }
 
 // Funcion de eventos del modal
-function eventosModal() {
+function enventoModalAnadirMovimiento() {
   const modal = document.getElementById("movimientoModal");
 
   if (modal) {
     // Cerrar modal al hacer clic fuera de él
     modal.addEventListener("click", function (e) {
-      if (e.target === this) {
+      if (e.target === modal) {
         cerrarModalAñadirMovimiento();
       }
     });
@@ -50,7 +50,7 @@ function eventosModal() {
     if (e.key === "Escape") {
       const modal = document.getElementById("movimientoModal");
       if (modal && !modal.classList.contains("hidden")) {
-        cerrarModal();
+        cerrarModalAñadirMovimiento();
       }
     }
   });
@@ -58,5 +58,5 @@ function eventosModal() {
 
 // IMPORTANTE: Inicializar eventos cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", function () {
-  eventosModal();
+  enventoModalAnadirMovimiento();
 });

@@ -74,10 +74,10 @@ include_once __DIR__ . '/../../config.php';
         </div>
     </div>
 
-    <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
     <?php include_once __DIR__ . '/layouts/modalMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalAñadirMovimiento.js"></script>
     <script src="<?php echo BASE_URL; ?>/public/assets/js/modalMovimiento.js"></script>
+    <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
+    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalAñadirMovimiento.js"></script>
 
 </body>
 
