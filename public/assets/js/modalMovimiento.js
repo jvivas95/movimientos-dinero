@@ -3,7 +3,7 @@
  */
 
 // Funcion para abrir el modal
-function abrirModal() {
+function abrirModal(movimiento) {
   const modal = document.getElementById("modalMovimiento");
   if (modal) {
     modal.classList.remove("hidden");
@@ -14,6 +14,10 @@ function abrirModal() {
     if (firstInput) {
       setTimeout(() => firstInput.focus(), 100);
     }
+
+    document.getElementById("hidden-movimiento-id").value = movimiento.id;
+
+    document.getElementById("modalMovimiento").classList.remove("hidden");
   }
 }
 
@@ -36,6 +40,9 @@ function abrirModalMovimiento(id, titulo, importe, fecha, observaciones) {
     }
     if (modalId) modalId.textContent = id;
     if (modalObservaciones) modalObservaciones.textContent = observaciones;
+
+    // Asignar el ID al campo oculto del formulario
+    document.getElementById("hidden-movimiento-id").value = id;
 
     modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";

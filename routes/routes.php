@@ -7,6 +7,8 @@ $route = $_GET['route'] ?? 'login';
 
 // Definir las rutas y los archivos que deben cargarse
 switch ($route) {
+
+    // REGISTRO
     case 'registro':
 
         // Comprobar si el usuario está autenticado
@@ -31,6 +33,8 @@ switch ($route) {
 
         //require_once __DIR__ . '/../app/views/registro.php';
         break;
+
+    // LOGIN
     case 'login':
 
         // Comprobar si el usuario está autenticado
@@ -50,12 +54,16 @@ switch ($route) {
             require_once __DIR__ . '/../app/views/login.php';
         }
         break;
+
+    // LOGOUT
     case 'logout':
 
         require_once __DIR__ . '/../app/controller/AuthController.php';
         $logoutUsuario = new AuthController();
         $logoutUsuario->logout();
         break;
+
+    // DASHBOARD
     case 'dashboard':
 
         // Comprobar si el usuario está autenticado
@@ -71,6 +79,8 @@ switch ($route) {
 
         require_once __DIR__ . '/../app/views/dashboard.php';
         break;
+
+    // AÑADIR MOVIMIENTO
     case 'añadirMovimiento':
 
         // Comprobar si el usuario está autenticado
@@ -89,7 +99,33 @@ switch ($route) {
         } else {
             require_once __DIR__ . '/../app/views/añadirMovimiento.php';
         }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+        }
+
         break;
+
+    // BORRAR MOVIMIENTO
+    case 'borrarMovimiento':
+
+        //Comprobar s iel usuario está autenticado
+        if (!isAuthenticated()) {
+
+            // Si no está autenticado, se le redirige al login
+            header("Location:?route=login");
+            exit();
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once __DIR__ . '/../app/controller/MovimientoController.php';
+            $borrarMovimiento = new MovimientoController();
+            $borrarMovimiento->borrarMovimientoUsuario();
+        } else {
+            header("Location:?route=dashboard");
+            exit();
+        }
+        break;
+
     default:
         // Página no encontrada
         require_once __DIR__ . '/../app/views/404.php';

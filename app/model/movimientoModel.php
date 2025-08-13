@@ -40,4 +40,18 @@ class movimientoModel
         $stmt->execute([$usuarioId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function borrarMovimientoUsuario($id)
+    {
+        global $pdo;
+
+        try {
+            $sql = "DELETE FROM movimiento WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            return $stmt->execute([$id]);
+        } catch (PDOException $e) {
+            error_log("Error al borrar movimiento " . $e->getMessage());
+            return false;
+        }
+    }
 }

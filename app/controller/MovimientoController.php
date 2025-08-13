@@ -51,4 +51,24 @@ class MovimientoController
             exit();
         }
     }
+
+    public function borrarMovimientoUsuario()
+    {
+        $movimientoId = $_POST['id'] ?? null;
+
+        if (!$movimientoId) {
+            echo "<script>alert('ID de movimiento no válido'); window.history.back();</script>";
+            return;
+        }
+
+        //Llamar al modelo para borrar el movimiento
+        $resultado = movimientoModel::borrarMovimientoUsuario($movimientoId);
+
+        if ($resultado) {
+            header("Location:?route=dashboard");
+            exit();
+        } else {
+            echo "<script>alert('Error al borrar el movimiento'); window.history.back();</script>";
+        }
+    }
 }
