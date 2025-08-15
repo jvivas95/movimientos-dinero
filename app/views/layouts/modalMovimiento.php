@@ -44,7 +44,16 @@
             <input type="hidden" name="id" id="hidden-movimiento-id" value="">
             <div class="flex justify-between w-full pl-10 pr-10 pb-3.5">
                 <button type="submit" class="md:block text-white p-2 cursor-pointer border border-solid bg-rose-500 rounded-2xl hover:bg-rose-700 duration-300" onclick="return confirm('¿Estás seguro de que quieres borrar este movimiento?')">Borrar</button>
-                <button class="md:block text-white border border-solid h-fit p-2 rounded-2xl bg-yellow-400 hover:bg-yellow-600 duration-300" type="button" onclick="abrirModalModificar()">Modificar</button>
+                <button class="md:block text-white border border-solid h-fit p-2 rounded-2xl bg-yellow-400 hover:bg-yellow-600 duration-300" type="button"
+                    onclick="
+                    console.log('ID:', document.getElementById('movimiento-id').textContent);
+                    abrirModalModificar(
+                    document.getElementById('movimiento-id').textContent,
+                    document.getElementById('fechas').textContent,
+                    document.getElementById('titulo').textContent,
+                    document.getElementById('importe').textContent,
+                    document.getElementById('observaciones').textContent
+                )">Modificar</button>
             </div>
         </form>
     </div>

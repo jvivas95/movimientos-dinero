@@ -3,18 +3,29 @@
  */
 
 // Funcion para abrir el modal
-function abrirModalModificar() {
+function abrirModalModificar(id, fecha, titulo, importe, observaciones) {
   const modal = document.getElementById("modalModificarMovimiento");
   if (modal) {
     modal.classList.remove("hidden");
     document.body.style.overflow = "hidden";
-
-    // Enfocar el primer input
-    const firstInput = modal.querySelector('input[type="text"]');
-    if (firstInput) {
-      setTimeout(() => firstInput.focus(), 100);
-    }
   }
+  document.getElementById("movimiento-id-modificar").value = id;
+  // Convertir fecha de DD/MM/YYYY a YYYY-MM-DD
+  let fechaFormateada = fecha;
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(fecha)) {
+    const partes = fecha.split("/");
+    fechaFormateada = `${partes[2]}-${partes[1]}-${partes[0]}`;
+  }
+
+  // Asignar la fecha al input type="date"
+  const inputFecha = document.querySelector('input[type="date"]');
+  if (inputFecha) {
+    inputFecha.value = fechaFormateada;
+  }
+  document.getElementById("titulo-modificar").placeholder = titulo;
+  document.getElementById("importe-modificar").placeholder = importe;
+  document.getElementById("observaciones-modificar").placeholder =
+    observaciones;
 }
 
 // Funcion de eventos del modal

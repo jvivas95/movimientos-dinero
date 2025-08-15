@@ -126,6 +126,28 @@ switch ($route) {
         }
         break;
 
+    // MODIFICAR MOVIMIENTO
+    case 'modificarMovimiento':
+
+        // Comprobar si el usuario está autenticado
+        if (!isAuthenticated()) {
+
+            // Si no está autenticado, se le redirige al login
+            header("Location:?route=login");
+            exit();
+        }
+
+        // Comprobar si el método es POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once(__DIR__ . '/../app/controller/MovimientoController.php');
+            $modificarMovimiento = new MovimientoController();
+            $modificarMovimiento->modificarMovimiento();
+        } else {
+            require_once __DIR__ . '/../app/views/añadirMovimiento.php';
+        }
+
+        break;
+
     default:
         // Página no encontrada
         require_once __DIR__ . '/../app/views/404.php';

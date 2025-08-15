@@ -43,15 +43,6 @@ class MovimientoController
         return $resultadoTodosMovimientos;
     }
 
-    public function mostrarMovimientosUsuario()
-    {
-        $usuarioId = $_COOKIE['id'] ?? null;
-        if (!$usuarioId) {
-            header("Location: ?route=login");
-            exit();
-        }
-    }
-
     public function borrarMovimientoUsuario()
     {
         $movimientoId = $_POST['id'] ?? null;
@@ -70,5 +61,28 @@ class MovimientoController
         } else {
             echo "<script>alert('Error al borrar el movimiento'); window.history.back();</script>";
         }
+    }
+
+    public function modificarMovimiento()
+    {
+        $idModif = $_POST["movimiento-id-modificar"] ?? '';
+        $fechaModif = $_POST["fecha-modificar"] ?? '';
+        $tituloModif = $_POST["titulo-modificar"] ?? '';
+        $importeModif = $_POST["importe-modificar"] ?? '';
+        $observacionModif = $_POST["observaciones-modificar"] ?? '';
+
+        $datosModificados =
+            [
+                $idModif,
+                $fechaModif,
+                $tituloModif,
+                $importeModif,
+                $observacionModif
+            ];
+
+        $datosString = json_encode($datosModificados);
+
+        echo "<script>alert('Datos recibidos: $datosString'); window.history.back();</script>";
+        exit();
     }
 }

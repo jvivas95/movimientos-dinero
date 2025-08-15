@@ -1,25 +1,6 @@
 /**
- * Funciones para manejar el modal de Añadir Movimientos
+ * Funciones para manejar el modal de un Movimiento
  */
-
-// Funcion para abrir el modal
-function abrirModal(movimiento) {
-  const modal = document.getElementById("modalMovimiento");
-  if (modal) {
-    modal.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
-
-    // Enfocar el primer input
-    const firstInput = modal.querySelector('input[type="text"]');
-    if (firstInput) {
-      setTimeout(() => firstInput.focus(), 100);
-    }
-
-    document.getElementById("hidden-movimiento-id").value = movimiento.id;
-
-    document.getElementById("modalMovimiento").classList.remove("hidden");
-  }
-}
 
 // Nueva función para abrir modal con datos específicos
 function abrirModalMovimiento(id, titulo, importe, fecha, observaciones) {
