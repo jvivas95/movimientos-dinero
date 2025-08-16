@@ -54,4 +54,20 @@ class movimientoModel
             return false;
         }
     }
+
+    public static function modificarMovimiento($datos)
+    {
+        global $pdo;
+
+        $idMov = $datos->getId();
+        $tituloMov = $datos->getTitulo();
+        $importe = $datos->getImporte();
+        $observaciones = $datos->getObservaciones();
+        $fechaMov = $datos->getCreatedAt();
+        $usuarioId = $datos->getUsuarioId();
+
+        $sql = "UPDATE movimiento SET titulo = ?, importe = ?, observaciones = ?,created_at = ?, usuario_id = ? WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        return $stmt->execute([$tituloMov, $importe, $observaciones, $fechaMov, $usuarioId, $idMov]);
+    }
 }

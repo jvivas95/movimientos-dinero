@@ -70,8 +70,10 @@ class MovimientoController
         $tituloModif = $_POST["titulo-modificar"] ?? '';
         $importeModif = $_POST["importe-modificar"] ?? '';
         $observacionModif = $_POST["observaciones-modificar"] ?? '';
+        $usuarioId = $_COOKIE['id'] ?? null;
 
-        $datosModificados =
+
+        /*$datosModificados =
             [
                 $idModif,
                 $fechaModif,
@@ -83,6 +85,25 @@ class MovimientoController
         $datosString = json_encode($datosModificados);
 
         echo "<script>alert('Datos recibidos: $datosString'); window.history.back();</script>";
-        exit();
+        exit();*/
+
+        $datosModificados = new Movimiento(
+            $idModif,
+            $tituloModif,
+
+            $importeModif,
+            $observacionModif,
+            $fechaModif,
+            $usuarioId
+        );
+
+        $resultadoDatos = movimientoModel::modificarMovimiento($datosModificados);
+
+        if ($resultadoDatos) {
+            header("Location:?route=dashboard");
+            exit();
+        } else {
+            echo "<script>alert('Error al borrar el movimiento'); window.history.back();</script>";
+        }
     }
 }
