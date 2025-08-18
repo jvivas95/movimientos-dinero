@@ -28,6 +28,15 @@ function abrirModalModificar(id, fecha, titulo, importe, observaciones) {
     observaciones;
 }
 
+// Funcion para cerrar el modal
+function cerrarModalModificar() {
+  const modal = document.getElementById("modalModificarMovimiento");
+  if (modal) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
+}
+
 // Funcion de eventos del modal
 function enventoModalAnadirMovimiento() {
   const modal = document.getElementById("modalModificarMovimiento");

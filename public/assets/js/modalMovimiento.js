@@ -38,12 +38,6 @@ function cerrarModal() {
   if (modal) {
     modal.classList.add("hidden");
     document.body.style.overflow = "auto";
-
-    // Limpiar el formulario
-    const form = document.getElementById("movimientosForm");
-    if (form) {
-      form.reset();
-    }
   }
 }
 
