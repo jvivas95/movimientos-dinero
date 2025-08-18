@@ -43,6 +43,7 @@
         <form method="POST" action="?route=borrarMovimiento">
             <input type="hidden" name="id" id="hidden-movimiento-id" value="">
             <div class="flex justify-between w-full pl-10 pr-10 pb-3.5">
+                <a type="" class="md:block text-white p-2 cursor-pointer border border-solid bg-blue-600 rounded-2xl hover:bg-blue-700 duration-300" href="?route=dashboard">Cancelar</a>
                 <button type="submit" class="md:block text-white p-2 cursor-pointer border border-solid bg-rose-500 rounded-2xl hover:bg-rose-700 duration-300" onclick="return confirm('¿Estás seguro de que quieres borrar este movimiento?')">Borrar</button>
                 <button class="md:block text-white border border-solid h-fit p-2 rounded-2xl bg-yellow-400 hover:bg-yellow-600 duration-300" type="button"
                     onclick="

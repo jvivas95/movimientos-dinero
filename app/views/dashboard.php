@@ -32,14 +32,15 @@ include_once __DIR__ . '/../../config.php';
                 <!-- CAJA LISTA DE MOVIMIENTOS -->
                 <div class="flex flex-col justify-start items-center w-full h-full pl-5 pr-5 pb-5 overflow-y-auto">
                     <!-- BUCLE PARA LISTAR MOVIMIENTOS -->
-                    <?php foreach ($movimientos as $index => $movimiento): ?>
+                    <?php foreach ($movimientos as $movimiento): ?>
                         <!-- CAJA MOVIMIENTO -->
-                        <div onclick="abrirModalMovimiento(<?= $movimiento['id'] ?>, '<?= addslashes($movimiento['titulo']) ?>', <?= $movimiento['importe'] ?>, '<?= date('d/m/Y', strtotime($movimiento['created_at'])) ?>', '<?= $movimiento['observaciones'] ?>')"
+                        <div onclick="abrirModalMovimiento(<?= $movimiento['id'] ?>, '<?= addslashes($movimiento['titulo']) ?>', '<?= $movimiento['importe'] ?>', '<?= date('d/m/Y', strtotime($movimiento['created_at'])) ?>', '<?= $movimiento['observaciones'] ?>')"
                             class="flex flex-col border border-solid w-full rounded-2xl p-2 pb-5 justify-between mb-1 overflow-y-auto cursor-pointer hover:bg-gray-50">
-                            <div class="fechas-<?= $index ?>"> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
+                            <div> <?= date('d/m/Y', strtotime($movimiento['created_at'])) ?></div>
+                            <div></div>
                             <div class="flex justify-between">
                                 <div class="font-bold">
-                                    <div class="titulo-<?= $index ?>"> <?= $movimiento['titulo'] ?></div>
+                                    <div> <?= $movimiento['titulo'] ?></div>
                                 </div>
                                 <div class="">
                                     <div class="importe-<?= $index ?> <?= $movimiento['importe'] >= 0 ? 'text-green-500' : 'text-red-600' ?>">
@@ -60,7 +61,7 @@ include_once __DIR__ . '/../../config.php';
                         <!-- CAJA IMPORTE TOTAL -->
                         <div class="flex justify-between items-center w-full px-2">
                             <span class="font-semibold">TOTAL:</span>
-                            <div id="importe" class="<?= $total >= 0 ? 'text-green-500' : 'text-red-600' ?>">
+                            <div class="<?= $total >= 0 ? 'text-green-500' : 'text-red-600' ?>">
                                 <?= number_format($total, 2) ?>€
                             </div>
                         </div>

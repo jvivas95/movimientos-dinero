@@ -4,6 +4,8 @@
 
 // Nueva función para abrir modal con datos específicos
 function abrirModalMovimiento(id, titulo, importe, fecha, observaciones) {
+  console.log([id, titulo, importe, fecha, observaciones]);
+
   const modal = document.getElementById("modalMovimiento");
   if (modal) {
     // Actualizar contenido del modal
