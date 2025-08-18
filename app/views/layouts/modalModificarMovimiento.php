@@ -20,25 +20,25 @@
                     <div>
                         <input type="text" id="movimiento-id-modificar" name="movimiento-id-modificar" value="" class="border border-solid hidden">
                         <div>Fecha</div>
-                        <input id="fecha-modificar" name="fecha-modificar" type="date" class="text-sm text-gray-600 border border-solid rounded-md" placeholder=""></input>
+                        <input id="fecha-modificar" name="fecha-modificar" type="date" class="text-lg border border-solid rounded-md" placeholder=""></input>
                     </div>
 
                     <!-- Título e Importe -->
                     <div class="flex flex-col items-start space-y-3">
                         <div class="flex-1">
                             <div>Titulo</div>
-                            <input id="titulo-modificar" name="titulo-modificar" class="font-bold text-lg border border-solid rounded-lg" type="text" placeholder=""></input>
+                            <input id="titulo-modificar" name="titulo-modificar" class="text-lg border border-solid rounded-lg pl-2" type="text" placeholder=""></input>
                         </div>
                         <div class="">
                             <div>Importe</div>
-                            <input id="importe-modificar" name="importe-modificar" class="font-semibold text-lg border border-solid rounded-lg w-full" type="number" placeholder=""></input>
+                            <input id="importe-modificar" name="importe-modificar" class="text-lg border border-solid rounded-lg w-full pl-2" type="number" placeholder=""></input>
                         </div>
                     </div>
 
                     <!-- Observaciones -->
                     <div class="border-b pb-3">
-                        <h4 class="font-medium text-gray-700 mb-2">Observaciones:</h4>
-                        <textarea id="observaciones-modificar" name="observaciones-modificar" class="text-gray-600 border border-solid rounded-lg w-full" type="text" placeholder=""></textarea>
+                        <div class="font-medium text-gray-700 mb-2">Observaciones:</div>
+                        <textarea id="observaciones-modificar" name="observaciones-modificar" class="border border-solid text-lg rounded-lg w-full pl-2" type="text" placeholder=""></textarea>
                     </div>
                 </div>
             </div>
