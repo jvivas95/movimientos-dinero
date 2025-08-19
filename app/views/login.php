@@ -33,6 +33,9 @@ include_once __DIR__ . '/../../config.php';
                     name="password"
                     required>
             </div>
+            <?php if (isset($_GET['error'])): ?>
+                <div class="text-red-700">Usuario o contraseña incorrectos</div>
+            <?php endif ?>
             <div class="w-full pt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-between">
                 <button
                     class="bg-blue-600 hover:bg-blue-700 transition duration-200 text-white text-center font-bold py-2 px-4 rounded-2xl w-full sm:w-auto"

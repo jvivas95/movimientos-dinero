@@ -11,7 +11,7 @@ class usuarioModel
         $nUsuario = $datos->getNUsuario();
         $email = $datos->getEmail();
         $password = $datos->getPassword();
- 
+
         // Verificar si el usuario o email existe
         $sql = "SELECT nusuario, email FROM usuario WHERE nusuario = ? OR email = ? LIMIT 1";
         $stmt = $pdo->prepare($sql);
@@ -27,7 +27,7 @@ class usuarioModel
         return $stmt->execute([$nUsuario, $email, $passwordHash]);
     }
 
-    public static function login ($datos)
+    public static function login($datos)
     {
         global $pdo;
 
@@ -45,15 +45,12 @@ class usuarioModel
         //return var_dump($usuario); -> Verificar el contenido del array $usuario
 
 
-        if ($usuario && isset($usuario["PASSWORD"]) && password_verify($password, $usuario["PASSWORD"]))
-        {
+        if ($usuario && isset($usuario["PASSWORD"]) && password_verify($password, $usuario["PASSWORD"])) {
             return $usuario;
-        }
-        else
-        {
+        } else {
             return false;
         }
-        
+
 
         //echo var_dump($usuario);
 
@@ -75,6 +72,5 @@ class usuarioModel
         setcookie('nusuario', '', time() - 3600); // Eliminar cookie
         setcookie('id', '', time() - 3600); // Eliminar cookie
         return true;
-
     }
 }

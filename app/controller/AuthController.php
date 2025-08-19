@@ -70,17 +70,17 @@ class AuthController
             // Redirigir al usuario al dashboard
             return header("Location:?route=dashboard");
         } else {
-            echo "<script>alert('Error en el login');</script>";
+            header("Location:?route=login&error=1");
+            exit();
         }
     }
 
     public function logout()
     {
         $resultadoLogout = usuarioModel::logout();
-        if ($resultadoLogout==true) {
+        if ($resultadoLogout == true) {
             return header("Location:?route=login");
         }
-
     }
 }
 
