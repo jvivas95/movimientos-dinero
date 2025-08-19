@@ -44,7 +44,7 @@
             </div>
 
             <!-- Footer del modal -->
-            <div class="flex justify-between w-full pl-10 pr-10 pb-3.5">
+            <div class="flex justify-between w-full pl-10 pr-10 pb-3.5 pt-3.5">
                 <a type="" class="md:block text-white p-2 cursor-pointer border border-solid bg-rose-500 rounded-2xl hover:bg-rose-700 duration-300" href="?route=dashboard">Cancelar</a>
                 <button class="md:block text-white border border-solid h-fit p-2 rounded-2xl bg-yellow-400 hover:bg-yellow-600 duration-300" type="submit">Modificar</button>
             </div>
