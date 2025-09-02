@@ -105,6 +105,17 @@ switch ($route) {
 
         break;
 
+    // TODOS LOS MOVIMIENTOS
+    case 'movimientos':
+
+        require_once __DIR__ . '/../app/controller/MovimientoController.php';
+        $todosMovimientos = new MovimientoController();
+        $movimientos = $todosMovimientos->mostrarTodosMovimientos();
+
+        require_once __DIR__ . '/../app/views/movimientos.php';
+
+        break;
+
     // BORRAR MOVIMIENTO
     case 'borrarMovimiento':
 
