@@ -8,7 +8,7 @@ include_once __DIR__ . '/../../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
 </head>
@@ -109,13 +109,13 @@ include_once __DIR__ . '/../../config.php';
         const gastos = <?php echo json_encode($gastos); ?>;
     </script>
 
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/donutChart.js"></script>
+    <script src="assets/js/donutChart.js"></script>
     <?php include_once __DIR__ . '/layouts/modalMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalMovimiento.js"></script>
+    <script src="assets/js/modalMovimiento.js"></script>
     <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalAñadirMovimiento.js"></script>
+    <script src="assets/js/modalAñadirMovimiento.js"></script>
     <?php include_once __DIR__ . '/layouts/modalModificarMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalModificarMovimiento.js"></script>
+    <script src="assets/js/modalModificarMovimiento.js"></script>
 
 
 

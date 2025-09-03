@@ -1,4 +1,5 @@
 <?php
 // Configuración de rutas
-define('BASE_URL', '/movimientos-dinero');
+//define('BASE_URL', '/movimientos-dinero');
+define('BASE_URL', '');
 define('APP_URL', BASE_URL . '/app');

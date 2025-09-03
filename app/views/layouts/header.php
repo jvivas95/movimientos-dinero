@@ -4,8 +4,8 @@
     </div>
     <div class="md:hidden mb-16 w-auto">
         <picture>
-            <source srcset="<?php echo BASE_URL; ?>/public/assets/images/logo.webp" type="image/webp">
-            <img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Logo" class="rounded-2xl w-40">
+            <source srcset="assets/images/logo.webp" type="image/webp">
+            <img src="assets/images/logo.png" alt="Logo" class="rounded-2xl w-40">
         </picture>
     </div>
     <div class="pt-2">

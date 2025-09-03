@@ -1,6 +1,3 @@
-<?php
-include_once __DIR__ . '/../../config.php';
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,7 +5,7 @@ include_once __DIR__ . '/../../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Dashboard</title>
 </head>
 

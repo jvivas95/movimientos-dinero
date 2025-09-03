@@ -2,8 +2,8 @@
     <nav class="flex flex-col w-fit h-screen p-5">
         <div class="mt-2.5 mb-16 max-w-56">
             <picture>
-                <source srcset="<?php echo BASE_URL; ?>/public/assets/images/logo.webp" type="image/webp">
-                <img src="<?php echo BASE_URL; ?>/public/assets/images/logo.png" alt="Logo" class="rounded-2xl w-40">
+                <source srcset="/assets/images/logo.webp" type="image/webp">
+                <img src="/assets/images/logo.png" alt="Logo" class="rounded-2xl w-40">
             </picture>
         </div>
         <div class="w-fit text-base">
@@ -42,7 +42,7 @@
                             <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
                             <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                         </svg>
-                        <div class="pl-2">Todos los movimientos</div>
+                        <div class="pl-2">Home</div>
                     </a>
                 </li>
             </ul>
