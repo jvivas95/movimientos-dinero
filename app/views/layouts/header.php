@@ -1,11 +1,11 @@
 <div class="flex justify-between items-center ml-8 mr-8 pt-10 pb-6">
-    <div class="">
+    <div class="hidden sm:block">
         <h1>Hola, <?php echo $_COOKIE['nusuario'] ?></h1>
     </div>
     <div class="md:hidden w-auto">
         <picture>
-            <source srcset="assets/images/logo.webp" type="image/webp">
-            <img src="assets/images/logo.png" alt="Logo" class="rounded-2xl w-16 sm:w-32">
+            <source srcset="/assets/images/logoM.webp" type="image/webp">
+            <img src="/assets/images/logoM.png" alt="Logo" class="rounded-full w-4">
         </picture>
     </div>
     <div class="">
