@@ -21,6 +21,8 @@
             <!-- HEADER -->
             <div class="sticky top-0 bg-gray-50">
                 <?php include_once(__DIR__ . '/layouts/header.php') ?>
+                <!-- NAVBAR MOBILE -->
+                <?php include_once(__DIR__ . '/layouts/navbar.php') ?>
             </div>
             <!-- CAJA LISTA DE MOVIMIENTOS -->
             <div class="flex flex-col items-center flex-1 rounded-2xl m-6">
@@ -65,19 +67,15 @@
                     </div>
                 </div>
             </div>
-            <!-- FOOTER MOBILE -->
-            <div class="sticky bottom-0 block md:hidden flex-shrink-0 bg-black text-white">
-                <?php include_once(__DIR__ . '/layouts/footer.php') ?>
-            </div>
         </div>
     </div>
 
     <?php include_once __DIR__ . '/layouts/modalMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalMovimiento.js"></script>
+    <script src="/assets/js/modalMovimiento.js"></script>
     <?php include_once __DIR__ . '/layouts/modalAñadirMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalAñadirMovimiento.js"></script>
+    <script src="/assets/js/modalAñadirMovimiento.js"></script>
     <?php include_once __DIR__ . '/layouts/modalModificarMovimiento.php' ?>
-    <script src="<?php echo BASE_URL; ?>/public/assets/js/modalModificarMovimiento.js"></script>
+    <script src="/assets/js/modalModificarMovimiento.js"></script>
 
 
 

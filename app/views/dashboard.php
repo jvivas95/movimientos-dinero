@@ -25,6 +25,8 @@ include_once __DIR__ . '/../../config.php';
             <!-- HEADER -->
             <div class="sticky top-0 bg-gray-50">
                 <?php include_once(__DIR__ . '/layouts/header.php') ?>
+                <!-- NAVBAR MOBILE -->
+                <?php include_once(__DIR__ . '/layouts/navbar.php') ?>
             </div>
             <!-- TITULO DASHBOARD -->
             <h1 class="text-center text-5xl md:text-6xl lg:text-7xl pt-8 pb-5">DASHBOARD</h1>
@@ -84,10 +86,6 @@ include_once __DIR__ . '/../../config.php';
                 <div class="border border-solid rounded-2xl w-2xs h-72">Caja 3</div>
                 <div class="border border-solid rounded-2xl w-2xs h-72">Caja 4</div>
                 -->
-            </div>
-            <!-- FOOTER MOBILE -->
-            <div class="sticky bottom-0 block md:hidden flex-shrink-0 bg-black text-white">
-                <?php include_once(__DIR__ . '/layouts/footer.php') ?>
             </div>
         </div>
     </div>
