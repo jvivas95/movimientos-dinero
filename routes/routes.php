@@ -75,7 +75,7 @@ switch ($route) {
 
         require_once __DIR__ . '/../app/controller/MovimientoController.php';
         $todosMovimientos = new MovimientoController();
-        $movimientos = $todosMovimientos->mostrarTodosMovimientos();
+        $movimientos = $todosMovimientos->mostrarTodosMovimientosUsuario();
 
         require_once __DIR__ . '/../app/views/dashboard.php';
         break;
@@ -110,7 +110,7 @@ switch ($route) {
 
         require_once __DIR__ . '/../app/controller/MovimientoController.php';
         $todosMovimientos = new MovimientoController();
-        $movimientos = $todosMovimientos->mostrarTodosMovimientos();
+        $movimientos = $todosMovimientos->mostrarTodosMovimientosUsuario();
 
         require_once __DIR__ . '/../app/views/movimientos.php';
 

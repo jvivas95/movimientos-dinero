@@ -1,25 +1,36 @@
-const ctx = document.getElementById("donutChart").getContext("2d"); // Obtiene el contexto del canvas donde se dibuja la gráfica
+const ctx = document.getElementById("donutChart").getContext("2d");
+
+// Manejar arrays vacíos correctamente
+const totalIngresos = ingresos.length > 0 ? ingresos.reduce((a, b) => a + b, 0) : 0;
+const totalGastos = gastos.length > 0 ? gastos.reduce((a, b) => a + b, 0) : 0;
+const tieneMovimientos = totalIngresos > 0 || totalGastos > 0;
 
 const datos = {
-  labels: ["Ingresos", "Gastos"], // Etiquetas para cada segmento del gráfico
+  labels: tieneMovimientos ? ["Ingresos", "Gastos"] : ["Sin movimientos"],
   datasets: [
     {
-      data: [
-        ingresos.reduce((a, b) => a + b, 0), // Suma todos los ingresos
-        gastos.reduce((a, b) => a + b, 0), // Suma todos los gastos
-      ],
-      backgroundColor: ["#22c55e", "#ef4444"], // Colores para ingresos (verde) y gastos (rojo)
+      data: tieneMovimientos ? [totalIngresos, totalGastos] : [1],
+      backgroundColor: tieneMovimientos ? ["#22c55e", "#ef4444"] : ["#d1d5db"],
+      borderWidth: 0
     },
   ],
 };
 
 new Chart(ctx, {
-  type: "doughnut", // Tipo de gráfico: dona
-  data: datos, // Datos y configuración
+  type: "doughnut",
+  data: datos,
   options: {
     responsive: true,
     plugins: {
-      legend: { position: "bottom" },
+      legend: { 
+        position: "bottom",
+        labels: {
+          color: tieneMovimientos ? '#374151' : '#9ca3af'
+        }
+      },
+      tooltip: {
+        enabled: tieneMovimientos
+      }
     },
   },
 });

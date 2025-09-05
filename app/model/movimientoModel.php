@@ -33,7 +33,7 @@ class movimientoModel
     {
         global $pdo;
 
-        $usuarioId = $id->getId();
+        $usuarioId = $id;
 
         $sql = "SELECT * FROM movimiento WHERE usuario_id = ?";
         $stmt = $pdo->prepare($sql);

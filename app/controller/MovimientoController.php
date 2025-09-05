@@ -43,6 +43,13 @@ class MovimientoController
         return $resultadoTodosMovimientos;
     }
 
+        public function mostrarTodosMovimientosUsuario()
+    {
+        $usuarioId = $_COOKIE['id'] ?? null;
+        $resultadoTodosMovimientosUsuario = movimientoModel::obtenerMovimientosUsuario($usuarioId);
+        return $resultadoTodosMovimientosUsuario;
+    }
+
     public function borrarMovimientoUsuario()
     {
         $movimientoId = $_POST['id'] ?? null;

@@ -59,7 +59,7 @@ include_once __DIR__ . '/../../config.php';
                                 </div>
                             <?php endforeach; ?>
                             <!-- CAJA DEL TOTAL DE MOVIMIENTOS -->
-                            <div class="flex border border-solid rounded-2xl mt-5 w-full p-1.5">
+                            <div class="flex border border-solid rounded-2xl mt-5 w-full p-1.5 bg-gray-200">
                                 <?php
                                 $total = 0;
                                 foreach ($movimientos as $movimiento) {
@@ -73,6 +73,14 @@ include_once __DIR__ . '/../../config.php';
                                         <?= number_format($total, 2) ?>€
                                     </div>
                                 </div>
+                            </div>
+                            <div class="flex flex-col justify-center items-center mt-5">
+                                <?php if ($total == 0) : ?>
+                                    <div class="text-xs sm:text-sm md:text-base">No hay movimientos registrados</div>
+                                    <div class="mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="#006f67"><path fill="none" stroke="#006f67" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v.01M10 6h1.499l4.5-3v3.803A6.019 6.019 0 0 1 18.657 10h1.341a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1.342c-.057.16-.12.318-.19.472M16.999 17v1.5a1.5 1.5 0 0 1-3 0v-.583a6.04 6.04 0 0 1-1 .083h-4a6.04 6.04 0 0 1-1-.083v.583a1.5 1.5 0 0 1-3 0v-2.027a6 6 0 0 1 1.5-9.928M3 3l18 18"/></svg>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -93,6 +101,7 @@ include_once __DIR__ . '/../../config.php';
     <?php
     $ingresos = [];
     $gastos = [];
+    $vacio = 0;
     foreach ($movimientos as $movimiento) {
         if ($movimiento['importe'] >= 0) {
             $ingresos[] = $movimiento['importe'];
@@ -105,6 +114,7 @@ include_once __DIR__ . '/../../config.php';
     <script>
         const ingresos = <?php echo json_encode($ingresos); ?>;
         const gastos = <?php echo json_encode($gastos); ?>;
+        const vacio = <?php echo json_encode($vacio); ?>;
     </script>
 
     <script src="assets/js/donutChart.js"></script>
